@@ -1,6 +1,3 @@
-
-
-
 //함수 선언문
 function hello1() {
   console.log('hello1')
