@@ -16,7 +16,7 @@ console.log(b)
 // 템플릿 문자열
 const str1 = '안녕하세요.';
 const str2 = '김겨울입니다.';
-const greeting = '${str1} 저는 ${str2}'
+const greeting = '${str1} 저는 ${str2}';
 
 const str3 = 'odada';
 const str4 = 100;
