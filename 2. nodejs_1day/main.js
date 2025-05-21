@@ -3,7 +3,6 @@ function hello1() {
   console.log('hello1')
 }
 
-
 //함수 표현식
 const hello2 = function (){
   console.log('hello2')
