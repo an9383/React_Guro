@@ -46,8 +46,8 @@
 //   console.log('커피를 마신다.')
 // }
 
-// // orderCoffee 함수를 호출하고 콜백 함수를 전달
-// // 콜백 함수는 orderCoffee 함수에서 커피가 만들어진 후에 실행된다.
+// orderCoffee 함수를 호출하고 콜백 함수를 전달
+// 콜백 함수는 orderCoffee 함수에서 커피가 만들어진 후에 실행된다.
 // orderCoffee('아메리카노', drinkCoffee)
 
 //promise를 사용하여 비동기 처리하기
