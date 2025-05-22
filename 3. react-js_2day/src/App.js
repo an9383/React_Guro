@@ -1,11 +1,123 @@
 // eslint-disable-next-line
-
 import React, { useState, useContext } from 'react'
 import Toolbar , {themes} from './grammar/Context'
 import Home from "./components/layout/Home";
 
 
 // App_01
+// function SignupForm({ title = "회원가입", onSubmit, buttonText = "가입하기" }) {
+//   // 폼 데이터를 관리할 상태 추가
+//   const [formData, setFormData] = useState({
+//     name: "",
+//     email: "",
+//     hasCar: false,
+//   });
+
+//   // 입력값 변경 처리
+//   const handleChange = (e) => {
+//     const { name, value } = e.target;
+//     setFormData((prevData) => ({
+//       ...prevData,
+//       [name]: value,
+//     }));
+//   };
+
+//   // 자차 유무 토글 처리
+//   const handleToggleCar = () => {
+//     setFormData((prevData) => ({
+//       ...prevData,
+//       hasCar: !prevData.hasCar,
+//     }));
+//   };
+
+//   // 폼 제출 처리
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     onSubmit?.(formData);
+//     console.log("제출된 데이터:", formData);
+//   };
+
+//   return (
+//     <form onSubmit={handleSubmit}>
+//       <h2>{title}</h2>
+//       <FormInput
+//         label="이름"
+//         type="text"
+//         placeholder="이름을 입력하세요"
+//         name="name"
+//         value={formData.name}
+//         onChange={handleChange}
+//       />
+//       <FormInput
+//         label="이메일"
+//         type="email"
+//         placeholder="이메일을 입력하세요"
+//         name="email"
+//         value={formData.email}
+//         onChange={handleChange}
+//       />
+//       <ToggleButton
+//         label="자차 유무"
+//         buttonText={formData.hasCar ? "자차 있음" : "자차 없음"}
+//         isActive={formData.hasCar}
+//         onClick={handleToggleCar}
+//       />
+//       <button type="submit">{buttonText}</button>
+//     </form>
+//   );
+// }
+
+// function FormInput({ label, type, placeholder, name, value, onChange }) {
+//   return (
+//     <div>
+//       <strong>{label}</strong>
+//       <input
+//         type={type}
+//         placeholder={placeholder}
+//         title={label}
+//         name={name}
+//         value={value}
+//         onChange={onChange}
+//       />
+//     </div>
+//   );
+// }
+
+// function ToggleButton({ label, buttonText, isActive, onClick }) {
+//   return (
+//     <div>
+//       <strong>{label}</strong>
+//       <button
+//         type="button" // submit 방지
+//         onClick={onClick}
+//         style={{
+//           backgroundColor: isActive ? "#4CAF50" : "#f0f0f0",
+//         }}
+//       >
+//         {buttonText}
+//       </button>
+//     </div>
+//   );
+// }
+
+// function App() {
+//   const handleSubmit = (formData) => {
+//     console.log("App에서 받은 제출 데이터:", formData);
+//     // API 호출 등의 처리를 할 수 있음
+//   };
+
+//   return (
+//     <SignupForm
+//       title="새 회원 등록"
+//       onSubmit={handleSubmit}
+//       buttonText="등록하기"
+//     />
+//   );
+// }
+
+// export default App;
+
+// App_02
 // function Header() {
 //   return (
 //     <header>
@@ -58,15 +170,9 @@ import Home from "./components/layout/Home";
 //   );
 // }
 
-//export default App;
+// export default App;
 
-// App_02
-// import Footer from "./components/layout/Footer";
-
-// // createContext 함수를 사용하여 Context 생성
-// const ThemeContext = React.createContext(themes.light);
-
-
+// App_03
 // function Header() {
 //   return (
 //     <header>
@@ -94,37 +200,38 @@ import Home from "./components/layout/Home";
 //   );
 // }
 
-// // ... Section 컴포넌트 생략 ...
+// function Section() {
+//   return (
+//     <section>
+//       <h2>섹션1</h2>
+//       <p>섹션1 컨텐츠</p>
+//     </section>
+//   );
+// }
+
+// function Footer() {
+//   return <footer>footer</footer>;
+// }
 
 // export default function App() {
 //   return (
 //     <div id="wrap">
 //       <Header />
 //       <main>
-//         {/* <Section />
-//         <Section /> */}
+//         <Section />
 //       </main>
 //       <Footer />
 //     </div>
 //   );
 // }
 
-// App_03
+// App_04
 // function App() {
 //   return (
 //     <div className="root">
-//       <Cat
-//         name="고양이1"
-//         age="1"
-//       />
-//       <Cat
-//         name="고양이2"
-//         age="2"
-//       />
-//       <Cat
-//         name="고양이3"
-//         age="3"
-//       />
+//       <Cat name="고양이1" age="1" />
+//       <Cat name="고양이2" age="2" />
+//       <Cat name="고양이3" age="3" />
 //     </div>
 //   );
 // }
@@ -142,9 +249,10 @@ import Home from "./components/layout/Home";
 //     </div>
 //   );
 // }
+
 // export default App;
 
-// App_04
+// App_05
 // function App() {
 //   const navArr = [
 //     { title: "component" },
@@ -154,18 +262,9 @@ import Home from "./components/layout/Home";
 //   return (
 //     <div className="root">
 //       <Header title="리액트(React)" nav={navArr} />
-//       <Article
-//         title="컴포넌트(Component)"
-//         desc="컴포넌트란 재사용 가능한 UI조각이다."
-//       />
-//       <Article
-//         title="속성(Props)"
-//         desc="속성이란 컴포넌트를 사용할 때 설정하는 속성이다."
-//       />
-//       <Article
-//         title="상태(State)"
-//         desc="속성이란 컴포넌트를 사용할 때 설정하는 속성이다."
-//       />
+//       <Article title="컴포넌트(Component)" desc="컴포넌트란 재사용 가능한 UI조각이다." />
+//       <Article title="속성(Props)" desc="속성이란 컴포넌트를 사용할 때 설정하는 속성이다." />
+//       <Article title="상태(State)" desc="속성이란 컴포넌트를 사용할 때 설정하는 속성이다." />
 //     </div>
 //   );
 // }
@@ -205,9 +304,7 @@ import Home from "./components/layout/Home";
 
 // export default App;
 
-// App_05
-// import Footer from "./components/layout/Footer";
-
+// App_06
 // function App() {
 //   // nav를 배열로 구성한다.
 //   const navArr = [{ title: 'Home' }, { title: 'About' }, { title: 'SignIn' }];
@@ -245,50 +342,50 @@ import Home from "./components/layout/Home";
 // export default App;
 
 
-// App_06
-// function App() {
-//   // data를 배열로 구성한다.
-//   const dataArr = [
-//     { name: '홍길동', age: 20 },
-//     { name: '임꺽정', age: 25 },
-//     { name: '전우치', age: 30 },
-//   ];
-//   return (
-//     <div className="root">
-//       <Table data={dataArr} /> {/* data를 props로 전달한다. */}
-//     </div>
-//   );
-// }
+// App_07
+function App() {
+  // data를 배열로 구성한다.
+  const dataArr = [
+    { name: '홍길동', age: 20 },
+    { name: '임꺽정', age: 25 },
+    { name: '전우치', age: 30 },
+  ];
+  return (
+    <div className="root">
+      <Table data={dataArr} /> {/* data를 props로 전달한다. */}
+    </div>
+  );
+}
 
-// function Table(props) {
-//   // key를 추가해 주는 이유는 리액트가 배열의 요소를 추가, 삭제, 수정할 때 효율적으로 처리하기 위해서이다.
-//   // item.id = 1, 2, 3
-//   // item.name = 홍길동, 임꺽정, 전우치
-//   // item.age = 20, 25, 30
+function Table(props) {
+  // key를 추가해 주는 이유는 리액트가 배열의 요소를 추가, 삭제, 수정할 때 효율적으로 처리하기 위해서이다.
+  // item.id = 1, 2, 3
+  // item.name = 홍길동, 임꺽정, 전우치
+  // item.age = 20, 25, 30
 
-//   return (
-//     <table>
-//       <thead>
-//         <tr>
-//           <th>id</th>
-//           <th>name</th>
-//           <th>age</th>
-//         </tr>
-//       </thead>
-//       <tbody>
-//         {props.data.map((item, index) => (
-//           <tr key={index}>
-//             <td>{index + 1}</td>
-//             <td>{item.name}</td>
-//             <td>{item.age}</td>
-//           </tr>
-//         ))}
-//       </tbody> {/* list 배열을 넣어준다. */}
-//     </table>
-//   );
-// }
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>name</th>
+          <th>age</th>
+        </tr>
+      </thead>
+      <tbody>
+        {props.data.map((item, index) => (
+          <tr key={index}>
+            <td>{index + 1}</td>
+            <td>{item.name}</td>
+            <td>{item.age}</td>
+          </tr>
+        ))}
+      </tbody> {/* list 배열을 넣어준다. */}
+    </table>
+  );
+}
 
-// export default App;
+export default App;
 
 // App_Comment Props
 // const App = () => {
@@ -356,7 +453,7 @@ import Home from "./components/layout/Home";
 
 // export default App;
 
-// App_07
+// App_08
 // const App = () => {
 //   const users = [
 //     {
@@ -464,7 +561,7 @@ import Home from "./components/layout/Home";
 //   );
 // }
 
-// App_08
+// App_09
 // const App = () => {
 //   const productsArr = [
 //     { id: 1, name: 'Product A', price: 10.99 },
@@ -663,73 +760,73 @@ import Home from "./components/layout/Home";
 // export default App;
 
 // App_useState2
-import { TbTicket } from 'react-icons/tb'; // 컬쳐 아이콘
-import { GiTreehouse } from 'react-icons/gi'; // 한적한 시골
-import { MdOutlinePhotoCamera } from 'react-icons/md'; // 최고의 전망
-import { BiHome } from 'react-icons/bi'; // 한옥
+// import { TbTicket } from 'react-icons/tb'; // 컬쳐 아이콘
+// import { GiTreehouse } from 'react-icons/gi'; // 한적한 시골
+// import { MdOutlinePhotoCamera } from 'react-icons/md'; // 최고의 전망
+// import { BiHome } from 'react-icons/bi'; // 한옥
 
-const App = () => {
-  const sortArr = [
-    { value: '컬쳐 아이콘', icon: <TbTicket /> },
-    { value: '한적한 시골', icon: <GiTreehouse /> },
-    { value: '최고의 전망', icon: <MdOutlinePhotoCamera /> },
-    { value: '한옥', icon: <BiHome /> },
-  ];
+// const App = () => {
+//   const sortArr = [
+//     { value: '컬쳐 아이콘', icon: <TbTicket /> },
+//     { value: '한적한 시골', icon: <GiTreehouse /> },
+//     { value: '최고의 전망', icon: <MdOutlinePhotoCamera /> },
+//     { value: '한옥', icon: <BiHome /> },
+//   ];
 
-  const [selected, setSelected] = useState(0);
+//   const [selected, setSelected] = useState(0);
 
-  return (
-    <div className='max-w-6xl mx-auto px-4'>
-      <div
-        className='flex justify-between items-center gap-8 border-b'
-        role='tablist'
-        aria-label='숙소 카테고리'
-      >
-        {sortArr.map((item, index) => (
-          <button
-            key={index}
-            onClick={() => setSelected(index)}
-            className={`
-              flex flex-col items-center justify-center
-              py-4 gap-2 flex-1
-              transition-all duration-200 ease-in-out
-              focus:outline-none
-              ${selected === index ? 'text-black border-b-2 border-black' : 'text-gray-500 hover:text-black hover:border-b-2 hover:border-gray-300'}
-            `}
-            role='tab'
-            aria-selected={selected === index}
-          >
-            <span
-              className='text-2xl'
-              aria-hidden='true'
-            >
-              {item.icon}
-            </span>
-            <span className='text-xs font-medium whitespace-nowrap'>{item.value}</span>
-          </button>
-        ))}
-      </div>
+//   return (
+//     <div className='max-w-6xl mx-auto px-4'>
+//       <div
+//         className='flex justify-between items-center gap-8 border-b'
+//         role='tablist'
+//         aria-label='숙소 카테고리'
+//       >
+//         {sortArr.map((item, index) => (
+//           <button
+//             key={index}
+//             onClick={() => setSelected(index)}
+//             className={`
+//               flex flex-col items-center justify-center
+//               py-4 gap-2 flex-1
+//               transition-all duration-200 ease-in-out
+//               focus:outline-none
+//               ${selected === index ? 'text-black border-b-2 border-black' : 'text-gray-500 hover:text-black hover:border-b-2 hover:border-gray-300'}
+//             `}
+//             role='tab'
+//             aria-selected={selected === index}
+//           >
+//             <span
+//               className='text-2xl'
+//               aria-hidden='true'
+//             >
+//               {item.icon}
+//             </span>
+//             <span className='text-xs font-medium whitespace-nowrap'>{item.value}</span>
+//           </button>
+//         ))}
+//       </div>
 
-      <div className='mt-4'>
-        {sortArr.map((item, index) => (
-          <div
-            key={index}
-            role='tabpanel'
-            aria-hidden={selected !== index}
-            className={`
-              transition-all duration-200 ease-in-out
-              ${selected === index ? 'block' : 'hidden'}
-            `}
-          >
-            {item.value} 관련 숙소가 표시됩니다.
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-};
+//       <div className='mt-4'>
+//         {sortArr.map((item, index) => (
+//           <div
+//             key={index}
+//             role='tabpanel'
+//             aria-hidden={selected !== index}
+//             className={`
+//               transition-all duration-200 ease-in-out
+//               ${selected === index ? 'block' : 'hidden'}
+//             `}
+//           >
+//             {item.value} 관련 숙소가 표시됩니다.
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
 
-export default App;
+// export default App;
 
 
 // App_ori
